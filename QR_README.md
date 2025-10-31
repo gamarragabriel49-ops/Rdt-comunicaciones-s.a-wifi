@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WiFi Gratis | Escanea y Conéctate</title>
     <style>
-        /* Todos los estilos anteriores permanecen igual */
         :root {
             --primary: #3498db;
             --secondary: #2ecc71;
@@ -102,9 +101,10 @@
         }
         
         .qr-code img {
-            width: 80%;
-            height: 80%;
+            width: 90%;
+            height: 90%;
             object-fit: contain;
+            border-radius: 5px;
         }
         
         .instructions {
@@ -213,8 +213,8 @@
         <div class="content">
             <div class="qr-section">
                 <div class="qr-code">
-                    <!-- AQUÍ COLOCA TU ARCHIVO QR -->
-                    <img src=![1000088765](https://github.com/user-attachments/assets/b63f7d81-00ae-4ea9-a49b-3c1afc5714a7)alt="Código QR para WiFi gratis">
+                    <!-- TU CÓDIGO QR -->
+                    <img src="IMG_20251030_235053.jpg" alt="Código QR para WiFi gratis">
                 </div>
                 <p>Escanea este código con tu teléfono</p>
                 <button class="btn" id="generateQR">Generar Nuevo Código</button>
@@ -322,4 +322,3 @@
     </script>
 </body>
 </html>
-
