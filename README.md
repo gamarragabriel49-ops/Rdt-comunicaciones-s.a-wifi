@@ -207,8 +207,7 @@
     <div class="container">
         <header>
             <h1>WiFi Gratis</h1>
-            <p>Escanea el c![1000088765](https://github.com/user-attachments/assets/1640382c-c94e-4381-8673-d380df4498e0)
-ódigo QR y conéctate a nuestra red</p>
+            <p>Escanea el código QR y conéctate a nuestra red</p>
         </header>
         
         <div class="content">
