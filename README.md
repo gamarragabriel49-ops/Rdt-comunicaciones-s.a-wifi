@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -214,7 +215,7 @@
         <div class="content">
             <div class="qr-section">
                 <div class="qr-code">
-                    <!-- TU CÓDIGO QR DE GITHUB -->
+                   ![IMG_20251030_235053 jpg](https://github.com/user-attachments/assets/3518d11a-be5b-4724-a504-f6fbc18dd6a7)
                     ![IMG_20251030_235053 jpg](https://github.com/user-attachments/assets/6f797dc8-d168-46aa-a0d4-7d331c0587f6)
                 </div>
                 <p>Escanea este código con tu teléfono</p>
