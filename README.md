@@ -1,20 +1,10 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WiFi Gratis | Escanea y Conéctate</title>
+    <title>Red Gratuita - Escanea el QR</title>
     <style>
-        :root {
-            --primary: #3498db;
-            --secondary: #2ecc71;
-            --dark: #2c3e50;
-            --light: #ecf0f1;
-            --accent: #e74c3c;
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -23,303 +13,247 @@
         }
         
         body {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--dark);
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 20px;
-        }
-        
-        .container {
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 900px;
-            overflow: hidden;
-            margin: 20px 0;
-        }
-        
-        header {
-            background-color: var(--dark);
-            color: white;
-            padding: 20px;
             text-align: center;
         }
         
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 30px;
-        }
-        
-        .qr-section {
-            flex: 1;
-            min-width: 300px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .qr-code {
-            width: 250px;
-            height: 250px;
-            background-color: #f5f5f5;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        h1 {
+            font-size: 2.5rem;
             margin-bottom: 20px;
-            border: 2px dashed var(--primary);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .highlight {
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+        
+        .qr-container {
+            margin: 30px auto;
+            width: 280px;
+            height: 280px;
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
             overflow: hidden;
         }
         
-        .qr-code::before {
-            content: "";
+        .qr-container::before {
+            content: '';
             position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(45deg, transparent 49%, var(--primary) 49%, var(--primary) 51%, transparent 51%),
-                linear-gradient(-45deg, transparent 49%, var(--primary) 49%, var(--primary) 51%, transparent 51%);
-            background-size: 20px 20px;
-            opacity: 0.1;
+            width: 150%;
+            height: 150%;
+            background: conic-gradient(
+                #ff0000, #ff9900, #ffff00, #00ff00, 
+                #00ffff, #0000ff, #9900ff, #ff00ff, #ff0000
+            );
+            animation: rotate 4s linear infinite;
+            z-index: 0;
         }
         
-        .qr-code img {
-            width: 90%;
-            height: 90%;
-            object-fit: contain;
-            border-radius: 5px;
+        .qr-container::after {
+            content: '';
+            position: absolute;
+            width: 270px;
+            height: 270px;
+            background: white;
+            border-radius: 15px;
+            z-index: 1;
         }
         
-        .instructions {
-            flex: 1;
-            min-width: 300px;
-            padding: 20px;
-        }
-        
-        .instructions h2 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-        
-        .step {
-            display: flex;
-            margin-bottom: 25px;
-            align-items: flex-start;
-        }
-        
-        .step-number {
-            background-color: var(--primary);
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
+        .qr-code {
+            width: 240px;
+            height: 240px;
+            z-index: 2;
+            position: relative;
+            border-radius: 10px;
+            background: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
             font-weight: bold;
+            color: #333;
+            font-size: 1.2rem;
         }
         
-        .step-content h3 {
-            margin-bottom: 5px;
-            color: var(--dark);
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #ff8a00, #e52e71);
+            border-radius: 50%;
+            line-height: 40px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         
         .features {
-            background-color: var(--light);
-            padding: 30px;
             display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
             flex-wrap: wrap;
-            justify-content: space-around;
         }
         
         .feature {
-            text-align: center;
-            padding: 15px;
-            max-width: 200px;
-        }
-        
-        .feature i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 20px;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
             font-size: 0.9rem;
         }
         
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+        .feature i {
+            margin-right: 8px;
+            font-size: 1.2rem;
         }
         
-        .btn:hover {
-            background-color: #27ae60;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
         
         @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
+            h1 {
+                font-size: 2rem;
             }
             
-            .qr-section, .instructions {
-                width: 100%;
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .qr-container {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .qr-code {
+                width: 210px;
+                height: 210px;
+            }
+            
+            .step {
+                min-width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>WiFi Gratis</h1>
-            <p>Escanea el código QR y conéctate a nuestra red</p>
-        </header>
+        <h1>¡Conéctate a Internet <span class="highlight">GRATIS</span>!</h1>
+        <p class="subtitle">Escanea el QR y podrás navegar por la red totalmente gratis siguiendo estos pasos</p>
         
-        <div class="content">
-            <div class="qr-section">
-                <div class="qr-code">
-                   ![Image](https://github.com/user-attachments/assets/15c79d93-f504-4941-8c45-59fa8fd44041) 
+        <div class="qr-container">
+            <div class="qr-code">
+                <!-- Aquí iría el código QR real -->
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">📱</div>
+                    <div>Escanea con tu cámara</div>
                 </div>
-                <p>Escanea este código con tu teléfono</p>
-                <button class="btn" id="generateQR">Generar Nuevo Código</button>
+            </div>
+        </div>
+        
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Escanea el código QR</h3>
+                <p>Abre la cámara de tu teléfono y apunta hacia el código QR</p>
             </div>
             
-            <div class="instructions">
-                <h2>Cómo Conectarse</h2>
-                
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Abre la cámara de tu teléfono</h3>
-                        <p>Usa la aplicación de cámara o un escáner QR para escanear el código.</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Sigue el enlace</h3>
-                        <p>Al escanear el código, se abrirá una página de inicio de sesión.</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Inicia sesión</h3>
-                        <p>Completa el formulario con tus datos o inicia sesión con redes sociales.</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>¡Disfruta del WiFi!</h3>
-                        <p>Una vez autenticado, tendrás acceso gratuito a nuestra red WiFi.</p>
-                    </div>
-                </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Sigue el enlace</h3>
+                <p>Haz clic en el enlace que aparece después de escanear</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>¡Disfruta!</h3>
+                <p>Conéctate a nuestra red rápida, segura y exclusiva</p>
             </div>
         </div>
         
         <div class="features">
             <div class="feature">
-                <i>⚡</i>
-                <h3>Alta Velocidad</h3>
-                <p>Conexión rápida y estable para todas tus necesidades.</p>
+                <i>⚡</i> Red Rápida
             </div>
-            
             <div class="feature">
-                <i>🔒</i>
-                <h3>Conexión Segura</h3>
-                <p>Tu privacidad está protegida con nuestra red segura.</p>
+                <i>🔒</i> Conexión Segura
             </div>
-            
             <div class="feature">
-                <i>🆓</i>
-                <h3>Completamente Gratis</h3>
-                <p>Sin costos ocultos ni límites de tiempo.</p>
+                <i>👑</i> Acceso Exclusivo
             </div>
         </div>
         
-        <footer>
-            <p>© 2023 WiFi Gratis - Todos los derechos reservados</p>
-            <p>Para asistencia, contacta a nuestro equipo de soporte.</p>
-        </footer>
+        <div class="footer">
+            <p>Conéctate ahora y disfruta de navegación ilimitada</p>
+        </div>
     </div>
-
-    <script>
-        document.getElementById('generateQR').addEventListener('click', function() {
-            alert('En una implementación real, aquí se generaría un nuevo código QR. Para este ejemplo, el código QR permanece igual.');
-        });
-        
-        // Simulación de temporizador de sesión
-        let timeLeft = 60 * 60; // 60 minutos en segundos
-        const timerElement = document.createElement('div');
-        timerElement.style.cssText = `
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--dark);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-        `;
-        document.body.appendChild(timerElement);
-        
-        function updateTimer() {
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
-            timerElement.textContent = Sesión activa: ${minutes}:${seconds < 10 ? '0' : ''}${seconds};
-            
-            if (timeLeft > 0) {
-                timeLeft--;
-                setTimeout(updateTimer, 1000);
-            } else {
-                timerElement.textContent = 'Sesión expirada';
-                timerElement.style.background = 'var(--accent)';
-            }
-        }
-        
-        updateTimer();
-    </script>
 </body>
 </html>
