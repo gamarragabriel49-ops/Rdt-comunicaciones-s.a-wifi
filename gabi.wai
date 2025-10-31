@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Rifa a Cancun</title>
+         <link rel="stylesheet" href="vista.css">
+     </head>
+     <body>
+         <header>
+             <h1>! CONECTATE A RED DE WI-FI TOTAL MENTE GRATIS ¡</h1>
+             <p>Escanea el QR de abajo para acceder a Rdt comunicaciones s.a gratis.</p>
+         </header>
+         <main>
+             <section class="raffle-info">
+                 <img src="qr-code.png"  alt="Scan to Enter Raffle" width="200" height="200">
+                 <p>Al escanearlo se te solicitaran unos datos y listo, estaras navegando por la red sin limites.</p>
+                 <p><strong>seguridad:</strong> accede a una red gratuita y 100% segura</p>
+                 <p><strong>Reglas:</strong> reservado para clientes usuarios.</p>
+             </section>
+         </main>
+         <footer>
+             <p>&copy; 2025 Rdt comunicaciones s.a Todos los derechos reservados.</p>
+         </footer>
+     </body>
+     </html>
