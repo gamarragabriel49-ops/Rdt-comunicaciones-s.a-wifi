@@ -214,7 +214,7 @@
             <div class="qr-section">
                 <div class="qr-code">
                     <!-- AQUÍ COLOCA TU ARCHIVO QR -->
-                    <img src="mi-codigo-qr.png" alt="Código QR para WiFi gratis">
+                    <img src=![1000088765](https://github.com/user-attachments/assets/b63f7d81-00ae-4ea9-a49b-3c1afc5714a7)alt="Código QR para WiFi gratis">
                 </div>
                 <p>Escanea este código con tu teléfono</p>
                 <button class="btn" id="generateQR">Generar Nuevo Código</button>
@@ -321,5 +321,5 @@
         updateTimer();
     </script>
 </body>
-</html>![1000088763](https://github.com/user-attachments/assets/b4f2035f-c332-4db8-ba44-bea62d4ba66b)
-![1000088763](https://github.com/user-attachments/assets/e82c2e7b-c2a9-4390-9481-09c6623a0762)
+</html>
+
