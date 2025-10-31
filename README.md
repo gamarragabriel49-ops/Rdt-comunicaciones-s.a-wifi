@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red Gratuita - Escanea el QR</title>
+    <title>Red Gratuita Argentina - Escanea el QR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -13,8 +14,8 @@
         }
         
         body {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            color: white;
+            background: linear-gradient(135deg, #74ACDF 0%, #FFFFFF 50%, #74ACDF 100%);
+            color: #333;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -25,34 +26,77 @@
         }
         
         .container {
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid #74ACDF;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #74ACDF 0%, #FFFFFF 50%, #74ACDF 100%);
         }
         
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+            color: #333;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
         
         .subtitle {
             font-size: 1.5rem;
             margin-bottom: 30px;
-            font-weight: 300;
+            font-weight: 500;
+            color: #74ACDF;
         }
         
         .highlight {
-            background: linear-gradient(90deg, #ff8a00, #e52e71);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: #74ACDF;
             font-weight: bold;
+        }
+        
+        .argentina-flag {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .flag-stripe {
+            height: 100%;
+            flex: 1;
+        }
+        
+        .flag-blue {
+            background-color: #74ACDF;
+        }
+        
+        .flag-white {
+            background-color: white;
+        }
+        
+        .sun-flag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            color: #F6B40E;
+            font-size: 24px;
         }
         
         .qr-container {
@@ -62,12 +106,13 @@
             background: white;
             border-radius: 20px;
             padding: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
+            border: 2px solid #74ACDF;
         }
         
         .qr-container::before {
@@ -76,8 +121,8 @@
             width: 150%;
             height: 150%;
             background: conic-gradient(
-                #ff0000, #ff9900, #ffff00, #00ff00, 
-                #00ffff, #0000ff, #9900ff, #ff00ff, #ff0000
+                #74ACDF, #FFFFFF, #74ACDF, #FFFFFF, 
+                #74ACDF, #FFFFFF, #74ACDF, #FFFFFF
             );
             animation: rotate 4s linear infinite;
             z-index: 0;
@@ -106,6 +151,15 @@
             font-weight: bold;
             color: #333;
             font-size: 1.2rem;
+            border: 1px solid #74ACDF;
+            overflow: hidden;
+        }
+        
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
         }
         
         .steps {
@@ -119,27 +173,34 @@
         .step {
             flex: 1;
             min-width: 200px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(116, 172, 223, 0.1);
             padding: 20px;
             border-radius: 15px;
-            backdrop-filter: blur(5px);
-            transition: transform 0.3s ease;
+            border: 1px solid #74ACDF;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .step:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(116, 172, 223, 0.2);
         }
         
         .step-number {
             display: inline-block;
             width: 40px;
             height: 40px;
-            background: linear-gradient(45deg, #ff8a00, #e52e71);
+            background: #74ACDF;
             border-radius: 50%;
             line-height: 40px;
             margin-bottom: 15px;
             font-weight: bold;
+            color: white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .step h3 {
+            color: #74ACDF;
+            margin-bottom: 10px;
         }
         
         .features {
@@ -153,21 +214,33 @@
         .feature {
             display: flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(116, 172, 223, 0.15);
             padding: 10px 20px;
             border-radius: 50px;
             font-size: 0.9rem;
+            color: #333;
+            border: 1px solid #74ACDF;
         }
         
         .feature i {
             margin-right: 8px;
             font-size: 1.2rem;
+            color: #74ACDF;
         }
         
         .footer {
             margin-top: 40px;
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: #666;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .argentina-icon {
+            color: #74ACDF;
+            margin: 0 5px;
         }
         
         @keyframes rotate {
@@ -206,53 +279,61 @@
 </head>
 <body>
     <div class="container">
-        <h1>¡Conéctate a Internet <span class="highlight">GRATIS</span>!</h1>
-        <p class="subtitle">Escanea el QR y podrás navegar por la red totalmente gratis siguiendo estos pasos</p>
+        <div class="sun-flag">
+            <i class="fas fa-sun"></i>
+        </div>
         
-        <div class=" ![IMG_20251030_235053">
-            <div class=" ![IMG_20251030_235053">
-             ![IMG_20251030_235053 jpg](https://github.com/user-attachments/assets/0046aa39-247d-4fbd-8e6a-80e914b91ca6)
-                <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 10px;">📱</div>
-                    <div>Escanea con tu cámara</div>
-                </div>
+        <h1>¡Conéctate a Internet <span class="highlight">GRATIS</span>!</h1>
+        <p class="subtitle">Escanea el QR y navegá por la red totalmente gratis siguiendo estos pasos</p>
+        
+        <div class="argentina-flag">
+            <div class="flag-stripe flag-blue"></div>
+            <div class="flag-stripe flag-white"></div>
+            <div class="flag-stripe flag-blue"></div>
+        </div>
+        
+        <div class="qr-container">
+            <div class="qr-code">
+                <!-- AQUÍ VA TU CÓDIGO QR -->
+                <img src="https://github.com/user-attachments/assets/15c79d93-f504-4941-8c45-59fa8fd44041" alt="Código QR para red gratuita">
             </div>
         </div>
         
         <div class="steps">
             <div class="step">
                 <div class="step-number">1</div>
-                <h3>Escanea el código QR</h3>
-                <p>Abre la cámara de tu teléfono y apunta hacia el código QR</p>
+                <h3>Escaneá el código QR</h3>
+                <p>Abrí la cámara de tu teléfono y apuntá hacia el código QR</p>
             </div>
             
             <div class="step">
                 <div class="step-number">2</div>
-                <h3>Sigue el enlace</h3>
-                <p>Haz clic en el enlace que aparece después de escanear</p>
+                <h3>Seguí el enlace</h3>
+                <p>Hacé clic en el enlace que aparece después de escanear</p>
             </div>
             
             <div class="step">
                 <div class="step-number">3</div>
-                <h3>¡Disfruta!</h3>
-                <p>Conéctate a nuestra red rápida, segura y exclusiva</p>
+                <h3>¡Disfrutá!</h3>
+                <p>Conectate a nuestra red rápida, segura y exclusiva</p>
             </div>
         </div>
         
         <div class="features">
             <div class="feature">
-                <i>⚡</i> Red Rápida
+                <i class="fas fa-bolt"></i> Red Rápida
             </div>
             <div class="feature">
-                <i>🔒</i> Conexión Segura
+                <i class="fas fa-shield-alt"></i> Conexión Segura
             </div>
             <div class="feature">
-                <i>👑</i> Acceso Exclusivo
+                <i class="fas fa-crown"></i> Acceso Exclusivo
             </div>
         </div>
         
         <div class="footer">
-            <p>Conéctate ahora y disfruta de navegación ilimitada</p>
+            <p>Conectate ahora y disfrutá de navegación ilimitada <i class="fas fa-wifi argentina-icon"></i></p>
+            <p>Red gratuita para todos los argentinos <i class="fas fa-flag argentina-icon"></i></p>
         </div>
     </div>
 </body>
