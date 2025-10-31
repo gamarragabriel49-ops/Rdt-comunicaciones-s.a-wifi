@@ -198,7 +198,7 @@
             <div class="qr-container">
                 <div class="qr-code">
                     <!-- Reemplaza "tu-qr.png" con la ruta de tu archivo QR -->
-                    <img src="tu-qr.png" alt="Código QR para login">
+                    <img src=IMG_20251030_235053.jpg alt="Código QR para login">
                 </div>
             </div>
             
