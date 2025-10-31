@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Rifa a Cancun</title>
+         <link rel="stylesheet" href="vista.css">
+     </head>
+     <body>
+         <header>
+             <h1>ESCANEA Y NAVEGA GRATIS POR LA RED </h1>
+             <p>Escanea el QR de abajo para conectarte a RDT comunicaciones S.A .</p>
+         </header>
+         <main>
+             <section class="raffle-info">
+                 <img src="qr-code.png"  alt="Scan to Enter Raffle" width="200" height="200">
+                 <p>Al escanearlo se te solicitaran unos datos y listo, estaras navegando.</p>
+                 <p><strong>seguridad:</strong> red 100% segura!</p>
+                 <p><strong>restricciones:</strong> Unicamente para usuarios.</p>
+             </section>
+         </main>
+         <footer>
+             <p>&copy; 2025 RDT comunicaciones S.A Todos los derechos reservados.</p>
+         </footer>
+     </body>
+     </html>
