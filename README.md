@@ -214,7 +214,7 @@
             <div class="qr-section">
                 <div class="qr-code">
                     <!-- TU CÓDIGO QR DE GITHUB -->
-                    ![Image](https://github.com/user-attachments/assets/15c79d93-f504-4941-8c45-59fa8fd44041) alt="Código QR para WiFi gratis">
+                    ![Image](https://github.com/user-attachments/assets/15c79d93-f504-4941-8c45-59fa8fd44041)
                 </div>
                 <p>Escanea este código con tu teléfono</p>
                 <button class="btn" id="generateQR">Generar Nuevo Código</button>
