@@ -209,8 +209,8 @@
         <h1>¡Conéctate a Internet <span class="highlight">GRATIS</span>!</h1>
         <p class="subtitle">Escanea el QR y podrás navegar por la red totalmente gratis siguiendo estos pasos</p>
         
-        <div class="qr-container">
-            <div class="qr-code">
+        <div class=" ![IMG_20251030_235053">
+            <div class=" ![IMG_20251030_235053">
              ![IMG_20251030_235053 jpg](https://github.com/user-attachments/assets/0046aa39-247d-4fbd-8e6a-80e914b91ca6)
                 <div style="text-align: center;">
                     <div style="font-size: 3rem; margin-bottom: 10px;">📱</div>
