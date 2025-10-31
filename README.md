@@ -214,7 +214,7 @@
         <div class="content">
             <div class="qr-section">
                 <div class="qr-code">
-                    <!-- AQUÍ COLOCA TU ARCHIVO QR -->
+                    (https://github.com/user-attachments/assets/1640382c-c94e-4381-8673-d380df4498e0)
                     <img IMG_20251030_235053.jpg alt="Código QR para WiFi gratis">
                 </div>
                 <p>Escanea este código con tu teléfono</p>
