@@ -211,7 +211,7 @@
         
         <div class="qr-container">
             <div class="qr-code">
-                <!-- Aquí iría el código QR real -->
+              (https://github.com/user-attachments/assets/15c79d93-f504-4941-8c45-59fa8fd44041) 
                 <div style="text-align: center;">
                     <div style="font-size: 3rem; margin-bottom: 10px;">📱</div>
                     <div>Escanea con tu cámara</div>
