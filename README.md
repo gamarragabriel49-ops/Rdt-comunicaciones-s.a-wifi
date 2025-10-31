@@ -321,5 +321,4 @@
         updateTimer();
     </script>
 </body>
-</html>![1000088763](https://github.com/user-attachments/assets/b4f2035f-c332-4db8-ba44-bea62d4ba66b)
-![1000088763](https://github.com/user-attachments/assets/e82c2e7b-c2a9-4390-9481-09c6623a0762)
+</html>
