@@ -211,7 +211,7 @@
         
         <div class="qr-container">
             <div class="qr-code">
-              ![Uploading IMG_20251030_235053.jpg.jpeg…]() 
+             ![IMG_20251030_235053 jpg](https://github.com/user-attachments/assets/0046aa39-247d-4fbd-8e6a-80e914b91ca6)
                 <div style="text-align: center;">
                     <div style="font-size: 3rem; margin-bottom: 10px;">📱</div>
                     <div>Escanea con tu cámara</div>
